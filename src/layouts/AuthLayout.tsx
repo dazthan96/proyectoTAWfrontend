@@ -1,5 +1,6 @@
 import { Grid, Box } from "@mui/material";
 import type React from "react";
+import { memo } from "react";
 import tramaImg from '../assets/trama.jpg';
 import logo from '../assets/logo.png';
 
@@ -7,7 +8,7 @@ interface AuthLayoutProps{
     children: React.ReactNode;//React.ReactNode define que el parametro puede ser cualuier cosa que react pueda mostrar
 }
 
-function AuthLayout(props: AuthLayoutProps){
+function AuthLayoutComponent(props: AuthLayoutProps){
     const {children} = props;
     return(
         <Grid container sx={{minHeight:'100vh'}}>
@@ -55,15 +56,16 @@ function AuthLayout(props: AuthLayoutProps){
                         maxWidth:'250px',
                         minWidth:'100px',
                         filter: 'drop-shadow(0px 10px 20px rgba(0,0,0,0.3))',
-                        m:5
+                        m:5,
+                        
                     }}
 
                 />
-                <Box sx={{ width: '100%', maxWidth: '400px' }}>
+                <Box sx={{ width: '100%', maxWidth: '400px',alignItems:"center" }}>
                     {children}
                 </Box>
             </Grid>
         </Grid>
     )
 }
-export{AuthLayout}
+export const AuthLayout = memo(AuthLayoutComponent);
