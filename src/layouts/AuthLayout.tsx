@@ -1,6 +1,5 @@
 import { Grid, Box } from "@mui/material";
 import type React from "react";
-import { memo } from "react";
 import tramaImg from '../assets/trama.jpg';
 import logo from '../assets/logo.png';
 
@@ -68,4 +67,5 @@ function AuthLayoutComponent(props: AuthLayoutProps){
         </Grid>
     )
 }
-export const AuthLayout = memo(AuthLayoutComponent);
+export {AuthLayoutComponent};
+//export const AuthLayout = memo(AuthLayoutComponent);

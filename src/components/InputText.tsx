@@ -1,11 +1,11 @@
 import { TextField } from '@mui/material';
+import type { RefObject } from 'react';
 
 interface PropsInput {
   label: string;
-  valor: string;
   tipo?: string;
+  valor: RefObject<HTMLInputElement|null>;
   ayuda?: string;
-  alCambiar: (nuevoValor: string) => void;
 }
 
 export function CustomInput(props: PropsInput) {
@@ -15,10 +15,9 @@ export function CustomInput(props: PropsInput) {
       variant="outlined"
       margin="normal"
       label={props.label}
-      value={props.valor}
+      inputRef={props.valor}
       type={props.tipo || 'text'}
       helperText={props.ayuda}
-      onChange={(evento) => props.alCambiar(evento.target.value)}
       sx={{ '& .MuiOutlinedInput-root': { borderRadius: '8px' } }}
     />
   );
