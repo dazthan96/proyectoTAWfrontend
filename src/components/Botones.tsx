@@ -1,22 +1,62 @@
-import { Button } from '@mui/material';
+import { Button, type ButtonProps } from '@mui/material';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 
 interface PropsBoton {
   texto: string;
-  color?: 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info';
+  color?: ButtonProps['color'];
   alHacerClick: () => void;
 }
 
-export function PrimaryButton(props: PropsBoton) {
+function LoginButton({texto, color='primary',alHacerClick }: PropsBoton) {
   return (
     <Button
       fullWidth
       variant="contained"
       size="large"
-      color={props.color || 'primary'}
-      onClick={props.alHacerClick}
-      sx={{ mt: 2, p: 1.5, fontWeight: 'bold', borderRadius: '8px' }}
+      color={color}
+      onClick={alHacerClick}
+      sx={{
+        mt: 2,
+        p: 1.5,
+        fontWeight: 'bold',
+        borderRadius: '8px'}}
     >
-       {props.texto}
+       {texto}
     </Button>
   );
 }
+function MenuButton({texto, color='inherit',alHacerClick}:PropsBoton){
+  return(
+    <ListItemButton
+    onClick={alHacerClick}
+    sx={{
+      py:1,
+      borderRadius:0,
+      backgroundColor:{color},
+      textAlign:'center'
+    }}
+  >
+    <ListItemText
+      primary={texto}
+      
+    />
+  </ListItemButton>
+  )
+}
+
+function BotonAccion({texto, color, alHacerClick}:PropsBoton) {
+  return (
+    <Button
+      variant="contained"
+      fullWidth
+      size="large"
+      color={color}
+      onClick={alHacerClick}
+      sx={{ fontWeight: 'bold', py: 1.5 }}
+    >
+      {texto}
+    </Button>
+  );
+}
+export {LoginButton, MenuButton, BotonAccion}

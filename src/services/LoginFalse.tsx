@@ -5,7 +5,7 @@ function loginFalse(user:string, contrasenia:string, navigate:any):boolean{
         alert("Credenciales incorrectas");
         return false;
     }else{
-        navigate("/dashboard")
+        navigate("/main")
         return true;
     }
 }

@@ -2,11 +2,11 @@ import {AuthLayoutComponent} from '../layouts/AuthLayout';
 import { Typography } from '@mui/material';
 import { CustomInput } from '../components/InputText';
 import {  useRef } from 'react';
-import { PrimaryButton } from '../components/Botones';
+import { LoginButton } from '../components/Botones';
 import { loginFalse } from '../services/LoginFalse';
 import { useNavigate } from 'react-router-dom';
 
-export function LoginPage():React.JSX.Element {
+function LoginPage():React.JSX.Element {
   const navigate = useNavigate();
   const userRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -25,9 +25,10 @@ export function LoginPage():React.JSX.Element {
       </Typography>
       <CustomInput label='Usuario' valor={userRef} tipo='text'/>
       <CustomInput label='Contraseña' valor={passwordRef} tipo='password'/>
-      <PrimaryButton texto='Ingresar' alHacerClick={maneraClick} color='info'/>
-      <PrimaryButton texto='Crear Usuario' alHacerClick={pruebaBoton} color='success'/>
+      <LoginButton texto='Ingresar' alHacerClick={maneraClick} color='info'/>
+      <LoginButton texto='Crear Usuario' alHacerClick={pruebaBoton} color='success'/>
       
     </AuthLayoutComponent>
   );
 }
+export{LoginPage}
