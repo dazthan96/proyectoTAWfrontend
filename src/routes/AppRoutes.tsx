@@ -7,6 +7,7 @@ import { AbastecimientoPage } from "../pages/AbastecimientoPage";
 import { ClientePage } from "../pages/ClientesPage";
 import { ProveedoresPage } from "../pages/ProveedoresPage";
 import { ProductosPage } from "../pages/ProductosPage";
+import { UsuarioPage } from "../pages/UsuarioPage";
 function AppRoutes():React.JSX.Element{
     return(
         <BrowserRouter>
@@ -19,6 +20,7 @@ function AppRoutes():React.JSX.Element{
                     <Route path="clientes" element={<ClientePage/>}/>
                     <Route path="proveedores" element={<ProveedoresPage/>}/>
                     <Route path="productos" element={<ProductosPage/>}/>
+                    <Route path="usuarios" element={<UsuarioPage/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -2,8 +2,10 @@
 
 export interface Usuario {
     id_usuario: number;
-    nombre_usuario: string;
+    usuario: string;
     constrasenia: string;
+    nombre:string;
+    apellido:string
     rol: 'admin' | 'barista';
     estado: boolean;
     creado: string;
@@ -49,7 +51,9 @@ export interface Cliente {
 export const USUARIOS: Usuario[] = [
     {
         id_usuario: 1,
-        nombre_usuario: 'admin_central',
+        usuario: 'admin',
+        nombre:'Body',
+        apellido:'Balastro',
         constrasenia: '123456789', // Simulación de bcrypt
         rol: 'admin',
         estado: true,
@@ -57,7 +61,9 @@ export const USUARIOS: Usuario[] = [
     },
     {
         id_usuario: 2,
-        nombre_usuario: 'lucia_barista',
+        usuario: 'lucia_barista',
+        nombre:'Lucia',
+        apellido:'Alvarez',
         constrasenia: '987654321', 
         rol: 'barista',
         estado: true,

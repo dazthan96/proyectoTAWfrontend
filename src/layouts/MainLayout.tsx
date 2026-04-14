@@ -21,6 +21,10 @@ function MainLayoutComponent(props:InterfazProp):React.JSX.Element{
         navegar("/main/ventas")
         setMenuLateral(false)
     }
+    function irUsuario(){
+        navegar("/main/usuarios")
+        setMenuLateral(false)
+    }
     function irAbastecimiento(){
         navegar("/main/abastecimiento")
         setMenuLateral(false)
@@ -85,7 +89,7 @@ function MainLayoutComponent(props:InterfazProp):React.JSX.Element{
 
                     <MenuButton texto="Ventas" alHacerClick={irVentas}></MenuButton>
 
-                    <MenuButton texto="Usuario" alHacerClick={prueba}></MenuButton>
+                    <MenuButton texto="Usuario" alHacerClick={irUsuario}></MenuButton>
                                         <MenuButton texto="Abastecimiento" alHacerClick={irAbastecimiento}></MenuButton>
                 </Box>
             </Drawer>
